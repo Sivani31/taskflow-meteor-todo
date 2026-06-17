@@ -1,0 +1,18 @@
+<template name="Task">
+  <li class="task-item {{#if checked}}checked{{/if}}" data-id="{{_id}}">
+    <span class="drag-handle">☰</span>
+
+    <input
+      type="checkbox"
+      class="toggle-checked"
+      checked="{{checked}}"
+    />
+
+    <div class="task-content">
+      <span class="task-text">{{text}}</span>
+      <span class="category {{categoryClass}}">{{category}}</span>
+    </div>
+
+    <button class="delete-task">Delete</button>
+  </li>
+</template>

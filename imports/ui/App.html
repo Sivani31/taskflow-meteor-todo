@@ -1,0 +1,37 @@
+<template name="App">
+  <div class="app">
+    <header>
+      <h1>MergerWare Taskflow</h1>
+
+      <form class="task-form">
+        <input
+          type="text"
+          name="text"
+          placeholder="Enter a new task"
+          required
+        />
+
+        <select name="category">
+          <option value="Work">Work</option>
+          <option value="Personal">Personal</option>
+          <option value="Urgent">Urgent</option>
+        </select>
+
+        <button type="submit">Add Task</button>
+      </form>
+
+      <div class="filters">
+        <button class="filter-btn" data-category="All">All</button>
+        <button class="filter-btn" data-category="Work">Work</button>
+        <button class="filter-btn" data-category="Personal">Personal</button>
+        <button class="filter-btn" data-category="Urgent">Urgent</button>
+      </div>
+    </header>
+
+    <ul id="task-list">
+      {{#each tasks}}
+        {{> Task}}
+      {{/each}}
+    </ul>
+  </div>
+</template>
