@@ -63,7 +63,39 @@ taskflow-meteor-todo
 ├── package-lock.json
 └── README.md
 ```
+## Application Flowchart
 
+```mermaid
+flowchart TD
+    A[User Opens TaskFlow App] --> B[Enter Task Details]
+    B --> C[Select Task Category]
+    C --> D[Click Add Task]
+
+    D --> E[Task Inserted into MongoDB]
+    E --> F[Task Displayed in Todo List]
+
+    F --> G{User Action}
+
+    G --> H[Filter by Category]
+    H --> I[Show Work / Personal / Urgent Tasks]
+    I --> F
+
+    G --> J[Mark Task as Completed]
+    J --> K[Update Task Status in MongoDB]
+    K --> F
+
+    G --> L[Delete Task]
+    L --> M[Remove Task from MongoDB]
+    M --> F
+
+    G --> N[Drag and Drop Task]
+    N --> O[Update Task Order in MongoDB]
+    O --> F
+
+    F --> P[Refresh Page]
+    P --> Q[Tasks Loaded from MongoDB]
+    Q --> F
+```
 ## How to Run the Project
 
 ### 1. Clone the repository
